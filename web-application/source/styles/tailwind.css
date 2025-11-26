@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+/**
+ * Developer's note: VSCode and other IDEs will complain about the `@theme` directive
+ * in this file because it is tailwind-specific.
+ */
+@theme {
+
+  /* Minty */
+  --color-minty-200:      #acd4cb;
+  --color-minty-500:      #18999e;
+
+  /* Purple */
+  --color-aubergine-500: #9f81b7;
+  
+}

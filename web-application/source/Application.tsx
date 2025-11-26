@@ -15,7 +15,7 @@ export function Application() {
     <div 
       className={classnames(
         'w-full h-screen', 
-        'bg-[var(--page-background)]'
+        'bg-minty-200'
       )}
     >
 
@@ -26,7 +26,7 @@ export function Application() {
 
         <PageHeader />
 
-        <div className='flex-1 rounded-t-xl bg-[var(--app-background)] shadow-xl'>
+        <div className='flex-1 rounded-t-xl bg-minty-500 shadow-xl'>
           Content
         </div>
 
