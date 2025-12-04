@@ -6,11 +6,25 @@
  */
 @theme {
 
+  /* Colors */
+
   /* Minty */
   --color-minty-200:      #acd4cb;
+  --color-minty-300:      #6FB8AD;
   --color-minty-500:      #18999e;
 
   /* Purple */
-  --color-aubergine-500: #9f81b7;
+  --color-aubergine-500:  #9f81b7;
+
+  /* Tan */
+  --color-tan-100:        #F2E4C7;
+
+  /* Mandarin */
+  --color-mandarin-500:   #E07144;
+
+  /* Fonts */
+
+  --font-caprasimo:       'Caprasimo';
+  --font-liter:           'Liter';
   
 }
