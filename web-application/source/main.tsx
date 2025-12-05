@@ -8,7 +8,6 @@ import ReactDOM from 'react-dom/client';
 import './styles/tailwind.css';
 
 /* Clutch */
-import './styles/colors.css';
 import './styles/fonts.css';
 import { Application } from 'Application';
 

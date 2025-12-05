@@ -18,7 +18,7 @@ export function Application() {
       className={classnames(
         'font-liter',
         'w-full h-screen', 
-        'bg-minty-200'
+        'bg-base-100'
       )}
     >
 
@@ -31,7 +31,7 @@ export function Application() {
 
         <div className={classnames(
           'flex-1', 
-          'rounded-t-xl bg-minty-500 shadow-xl',
+          'rounded-t-xl bg-base-300 shadow-xl',
           'flex flex-col'
         )}>
           

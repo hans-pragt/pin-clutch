@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /**
  * Developer's note: VSCode and other IDEs will complain about the `@theme` directive
@@ -6,25 +6,57 @@
  */
 @theme {
 
-  /* Colors */
-
-  /* Minty */
-  --color-minty-200:      #acd4cb;
-  --color-minty-300:      #6FB8AD;
-  --color-minty-500:      #18999e;
-
-  /* Purple */
-  --color-aubergine-500:  #9f81b7;
-
-  /* Tan */
-  --color-tan-100:        #F2E4C7;
-
-  /* Mandarin */
-  --color-mandarin-500:   #E07144;
-
-  /* Fonts */
-
   --font-caprasimo:       'Caprasimo';
   --font-liter:           'Liter';
   
+}
+
+:root {
+  /* Colors */
+
+  /* Aubergine */
+  --aubergine-500:  #9f81b7;
+
+  /* Mandarin */
+  --mandarin-500:   #e07144;
+
+  /* Minty */
+  --minty-200:      #acd4cb;
+  --minty-300:      #6fb8ad;
+  --minty-500:      #18999e;
+  
+  /* Tan */  
+  --tan-100:        #f2e4c7;
+
+}
+
+/* Daisy UI */
+@plugin 'daisyui' {
+  themes: light --default;
+}
+
+@plugin 'daisyui/theme' {
+  name:                   'light';
+  default:                true;
+
+  /* https://daisyui.com/docs/colors/ */
+
+  /* Page Base Colors */
+  
+  --color-base-100:       var(--minty-200);
+  --color-base-200:       var(--minty-300);
+  --color-base-300:       var(--minty-500);
+
+  /* Theme Colors */
+
+  --color-secondary:      var(--aubergine-500);
+
+  --color-accent:         var(--mandarin-500);
+  --color-accent-content: var(--tan-100);
+}
+
+/* Button Customization */
+@utility btn {
+  @apply tracking-wide;
+  @apply font-normal;
 }
