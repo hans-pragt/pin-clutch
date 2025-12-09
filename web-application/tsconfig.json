@@ -5,6 +5,7 @@
     "lib": ["ES2024", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["vite/client"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -23,8 +24,7 @@
     /* Paths */
     "baseUrl": "./source",
     "paths": {
-      "@common-components": ["common-components"],
-      "@routes": ["routes"]
+      "@icons/*": ["icons/*"]
     }
   },
   "include": ["source"],

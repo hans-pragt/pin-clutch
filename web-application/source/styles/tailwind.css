@@ -49,10 +49,11 @@
 
   /* Theme Colors */
 
-  --color-secondary:      var(--aubergine-500);
+  --color-secondary:          var(--aubergine-500);
+  --color-secondary-content:  var(--tan-100);
 
-  --color-accent:         var(--mandarin-500);
-  --color-accent-content: var(--tan-100);
+  --color-accent:             var(--mandarin-500);
+  --color-accent-content:     var(--tan-100);
 }
 
 /* Button Customization */

@@ -2,7 +2,7 @@
 
 export function PinsGrid() {
   return (
-    <div>Pins</div>
+    <div></div>
   );
 }
 
