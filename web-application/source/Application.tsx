@@ -1,12 +1,14 @@
 // #region Imports
 
+/* React Router */
+import { RouterProvider } from 'react-router-dom';
+
 /* Classnames */
 import classnames from 'classnames';
 
 /* Clutch */
 import { PageHeader } from 'views/application/PageHeader';
-import { SearchPanel } from 'views/application/SearchPanel';
-import { MyPinsView } from 'views/my-pins/MyPinsView';
+import { router } from '@routes';
 
 // #endregion Imports
 
@@ -34,12 +36,7 @@ export function Application() {
           'rounded-t-xl bg-base-300 shadow-xl',
           'flex flex-col'
         )}>
-          
-          <SearchPanel />
-
-          {/* Views */}
-          <MyPinsView />
-
+          <RouterProvider router={router} />
         </div>
 
       </div>

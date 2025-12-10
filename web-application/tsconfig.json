@@ -24,7 +24,9 @@
     /* Paths */
     "baseUrl": "./source",
     "paths": {
-      "@icons/*": ["icons/*"]
+      "@icons/*": ["icons/*"],
+      "@routes": ["routes/"],
+      "@routes/*": ["routes/*"]
     }
   },
   "include": ["source"],
