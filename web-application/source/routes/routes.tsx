@@ -2,6 +2,7 @@
 
 /* React Router */
 import { createBrowserRouter } from 'react-router-dom';
+import { ApplicationLayout } from 'views/application/ApplicationLayout';
 import { HomeView } from 'views/pins/HomeView';
 
 /* Clutch */
@@ -15,45 +16,50 @@ import { SignInView } from 'views/sign-in/SignInView';
 
 const router = createBrowserRouter([
 
-  // Pins
   {
     path: '/',
-    element: <PinsView />,
+    element: <ApplicationLayout />,
     children: [
-
-      /* Home */
+      // Pins
       {
         path: '/',
-        element: <HomeView />
+        element: <PinsView />,
+        children: [
+
+          /* Home */
+          {
+            path: '/',
+            element: <HomeView />
+          },
+
+          {
+            path: '/pins/:username',
+            element: <UserView />
+          }
+
+        ]
       },
 
+      // Sign In / Create Account
       {
-        path: '/pins/:username',
-        element: <UserView />
+        path: '/sign-in',
+        element: <SignInView />
+      },
+
+      // Profile Settings
+      {
+        path: '/profile',
+        element: <div>Profile</div>
+      },
+
+      // Admin
+      {
+        path: '/admin',
+        element: <div>Admin</div>
       }
-
     ]
-  },
-
-  // Sign In / Create Account
-  {
-    path: '/sign-in',
-    element: <SignInView />
-  },
-
-  // Profile Settings
-  {
-    path: '/profile',
-    element: <div>Profile</div>
-  },
-
-  // Admin
-  {
-    path: '/admin',
-    element: <div>Admin</div>
   }
-
-])
+]);
 
 export { router };
 
