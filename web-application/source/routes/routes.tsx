@@ -7,7 +7,7 @@ import { HomeView } from 'views/pins/HomeView';
 
 /* Clutch */
 import { PinsView } from 'views/pins/PinsView';
-import { UserView } from 'views/pins/UserView';
+import { UsersPinsView } from 'views/pins/UsersPinsView';
 import { SignInView } from 'views/sign-in/SignInView';
 
 // #endregion Imports
@@ -32,9 +32,10 @@ const router = createBrowserRouter([
             element: <HomeView />
           },
 
+          /* User's Pins */
           {
-            path: '/pins/:username',
-            element: <UserView />
+            path: '/pins/user/:username',
+            element: <UsersPinsView />
           }
 
         ]
