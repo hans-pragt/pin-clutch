@@ -8,6 +8,7 @@ import pinoHTTP from 'pino-http';
 
 /* PinClutch */
 import { logger } from '../logging';
+import AuthorizationRoutes from './authorization/authorization';
 
 // #endregion Imports
 
@@ -22,7 +23,7 @@ export function initializeAPI(port : number) {
   application.use(httpLogger);
   
   // Routes
-  // TODO
+  application.use('/authorization', AuthorizationRoutes);
 
   application.listen(
     port, 
