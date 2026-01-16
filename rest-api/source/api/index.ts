@@ -24,7 +24,7 @@ export function initializeAPI(port : number) {
   
   // Routes
   application.use('/authorization', AuthorizationRoutes);
-
+  
   application.listen(
     port, 
     () => apiLogger.info(`API is serving data on port ${port}`)
