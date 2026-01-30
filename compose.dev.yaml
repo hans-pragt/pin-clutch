@@ -1,5 +1,5 @@
 services:
-  backend:
+  rest-api:
     build:
       context: ./rest-api
       dockerfile: Dockerfile
@@ -10,13 +10,13 @@ services:
       - ./rest-api/source:/app/source
       - /app/node_modules                     # Don't include node_modules since it can contain native dependencies.
 
-  # frontend:
-  #   build:
-  #     context: ./web-application
-  #     dockerfile: Dockerfile
-  #     target: development
-  #   ports:
-  #     - "7070:7070"
-  #   volumes:
-  #     - ./web-application:/app # Mount your source code
-  #     - /app/node_modules # Exclude node_modules from the mount to avoid I/O latency issues
+  web-application:
+    build:
+      context: ./web-application
+      dockerfile: Dockerfile
+      target: development
+    ports:
+      - "7070:7070"
+    volumes:
+      - ./web-application:/app
+      - /app/node_modules                   # Exclude node_modules from the mount to avoid I/O latency issues.

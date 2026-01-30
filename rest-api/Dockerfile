@@ -16,7 +16,7 @@ FROM base AS development
 ARG ENVIRONMENT=development
 ENV NODE_ENV=$ENVIRONMENT
 
-EXPOSE 3000
+EXPOSE 3030
 
 CMD ["npm", "run", "develop"]
 
