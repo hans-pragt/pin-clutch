@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 // #region Component
 
-export function PageHeader() {
+export function PinsViewHeader() {
   return (
     <div className="py-2 flex flex-row items-center">
 

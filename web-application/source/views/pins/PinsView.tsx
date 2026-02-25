@@ -1,23 +1,38 @@
 // #region Imports
 
-/* React Router */
+/* React Router Dom */
 import { Outlet } from 'react-router-dom';
 
-/* Clutch */
+/* Classnames */
+import classnames from 'classnames';
 import { SearchPanel } from './components/SearchPanel';
+import { PinsViewHeader } from './components/PinsViewHeader';
 
 // #endregion Imports
 
 // #region Component
 
 /**
- * All pin-related views, including the home page and a user's individual pins.
+ * The home-page of the website.
  */
 export function PinsView() {
   return (
-    <div className='flex flex-col'>
-      <SearchPanel />
-      <Outlet />
+    <div className={classnames(
+      'container md:mx-auto h-full', 
+      'flex flex-col'
+    )}>
+      <PinsViewHeader />
+
+      {/* Page Content */}
+      <div className={classnames(
+        'flex-1', 
+        'rounded-t-xl bg-base-300 shadow-xl',
+        'flex flex-col'
+      )}>
+        <SearchPanel />
+        <Outlet />
+      </div>
+
     </div>
   );
 };

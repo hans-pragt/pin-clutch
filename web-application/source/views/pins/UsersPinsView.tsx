@@ -1,7 +1,6 @@
 // #region Imnports
 
 /* Clutch */
-import { PinsGrid } from './components/PinsGrid';
 import { Toolbar } from './components/Toolbar';
 
 // #endregion Imports
@@ -16,8 +15,7 @@ export function UsersPinsView() {
     <div className='flex flex-col gap-4'>
 
       <Toolbar />
-      <PinsGrid className='px-4' />
-
+      
     </div>
   );
 }

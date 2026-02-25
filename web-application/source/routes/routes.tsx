@@ -2,13 +2,10 @@
 
 /* React Router */
 import { createBrowserRouter } from 'react-router-dom';
-import { ApplicationLayout } from 'views/application/ApplicationLayout';
-import { HomeView } from 'views/pins/HomeView';
 
 /* Clutch */
 import { PinsView } from 'views/pins/PinsView';
 import { UsersPinsView } from 'views/pins/UsersPinsView';
-import { SignInView } from 'views/sign-in/SignInView';
 
 // #endregion Imports
 
@@ -16,50 +13,72 @@ import { SignInView } from 'views/sign-in/SignInView';
 
 const router = createBrowserRouter([
 
-  {
-    path: '/',
-    element: <ApplicationLayout />,
-    children: [
-      // Pins
-      {
-        path: '/',
-        element: <PinsView />,
-        children: [
+    // #region Pins
 
-          /* Home */
-          {
-            path: '/',
-            element: <HomeView />
-          },
+    /* Home */
+    {
+      path: '/',
+      element: <PinsView />,
+      children: [
 
-          /* User's Pins */
-          {
-            path: '/pins/user/:username',
-            element: <UsersPinsView />
-          }
+        /* Home Page */
+        {
+          path: '/',
+          element: <div>Home Page</div>
+        },
 
-        ]
-      },
+        /* User's Pins */
+        {
+          path: '/pins/user/:username',
+          element: <UsersPinsView />
+        },
 
-      // Sign In / Create Account
-      {
-        path: '/sign-in',
-        element: <SignInView />
-      },
+        /* Sets */
+        {
+          path: '/pins/sets',
+          element: <div>Pin Sets</div>
+        },
 
-      // Profile Settings
-      {
-        path: '/profile',
-        element: <div>Profile</div>
-      },
+        /* Set */
+        {
+          path: '/pins/sets/:setid',
+          element: <div>Pin Set</div>
+        }
+      ]
+    },
 
-      // Admin
-      {
-        path: '/admin',
-        element: <div>Admin</div>
-      }
-    ]
-  }
+    // #endregion Pins
+
+    // #region Authentication
+
+    /* Sign In / Create Account */
+    {
+      path: '/sign-in',
+      element: <div>Sign In</div>
+    },
+
+    // #endregion Authentication
+
+    // #region Profile
+
+    /* Profile */
+    {
+      path: '/profile',
+      element: <div>Profile</div>
+    },
+
+    // #endregion Profile
+
+    // #region Administration
+
+    /* Administrative */
+    {
+      path: '/admin',
+      element: <div>Admin</div>
+    }
+
+    // #endregion Administration
+    
 ]);
 
 export { router };
