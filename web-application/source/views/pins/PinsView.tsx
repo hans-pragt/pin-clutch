@@ -18,8 +18,8 @@ import { PinsViewHeader } from './components/PinsViewHeader';
 export function PinsView() {
   return (
     <div className={classnames(
-      'container md:mx-auto h-full', 
-      'flex flex-col'
+      'container md:mx-auto h-full pt-4', 
+      'flex flex-col gap-2'
     )}>
       <PinsViewHeader />
 
