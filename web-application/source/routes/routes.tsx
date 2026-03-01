@@ -6,6 +6,7 @@ import { createBrowserRouter } from 'react-router-dom';
 /* Clutch */
 import { PinsView } from 'views/pins/PinsView';
 import { UsersPinsView } from 'views/pins/UsersPinsView';
+import { SignInView } from 'views/sign-in/SignInView';
 
 // #endregion Imports
 
@@ -54,7 +55,7 @@ const router = createBrowserRouter([
     /* Sign In / Create Account */
     {
       path: '/sign-in',
-      element: <div>Sign In</div>
+      element: <SignInView />
     },
 
     // #endregion Authentication
