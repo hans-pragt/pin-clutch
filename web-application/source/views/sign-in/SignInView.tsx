@@ -22,7 +22,8 @@ export function SignInView() {
       {/* Sign In Form */}
       <div className={classnames(
         'flex-1',
-        'rounded-t-xl bg-base-300 shadow-xl'
+        'rounded-t-xl bg-base-300',
+        'border-8 border-gray-800 border-b-0'
       )}>
 
       </div>

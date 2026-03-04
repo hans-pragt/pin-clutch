@@ -5,6 +5,7 @@ import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 
 /* Tailwind */
+import './styles/components/components.scss';
 import './styles/tailwind.css';
 
 /* Clutch */

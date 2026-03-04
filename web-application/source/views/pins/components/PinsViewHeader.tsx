@@ -13,10 +13,10 @@ export function PinsViewHeader() {
     <div className="flex flex-row items-center">
 
       {/* Application */}
-      <span className="flex-1 font-caprasimo text-base-300 text-6xl">Clutch</span>
+      <span className="flex-1 pc-page-header">Clutch</span>
 
       {/* Sign In / Register */}
-      <Link className='btn btn-lg btn-accent tracking-wide' to="/sign-in">
+      <Link className='pc-button' to="/sign-in">
         <UserIcon />
         Sign In
       </Link>
