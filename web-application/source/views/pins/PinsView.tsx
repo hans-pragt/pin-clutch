@@ -26,9 +26,9 @@ export function PinsView() {
       {/* Page Content */}
       <div className={classnames(
         'flex-1', 
-        'rounded-t-xl bg-base-300',
+        'bg-(--minty-500)',
         'flex flex-col',
-        'border-4 border-gray-800 border-b-0',
+        'border-4 border-(--pc-outline-color) border-b-0 rounded-t-xl',
         'shadow-(--pc-shadow)'
       )}>
         <SearchPanel />

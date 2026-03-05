@@ -17,13 +17,14 @@ export function SignInView() {
       'flex flex-col gap-2'
     )}>
 
-      <span className='font-caprasimo text-base-300 text-6xl'>Sign In</span>
+      <span className='pc-page-header'>Sign In</span>
 
       {/* Sign In Form */}
       <div className={classnames(
         'flex-1',
-        'rounded-t-xl bg-base-300',
-        'border-8 border-gray-800 border-b-0'
+        'bg-base-300',
+        'border-4 border-(--pc-outline-color) border-b-0 rounded-t-xl',
+        'shadow-(--pc-shadow)'
       )}>
 
       </div>

@@ -19,7 +19,7 @@ export function Application() {
       className={classnames(
         'font-liter',
         'w-full h-screen', 
-        'bg-base-100'
+        'bg-(--minty-200)'
       )}
     >
       <RouterProvider router={router} />
