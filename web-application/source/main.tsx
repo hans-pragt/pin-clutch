@@ -8,8 +8,8 @@ import ReactDOM from 'react-dom/client';
 import './styles/tailwind.css';
 
 /* Clutch */
-import './styles/fonts.css';
-import './styles/components/components.scss';
+import './styles/primitives/index.scss';
+import './styles/components/index.scss';
 import { Application } from 'Application';
 
 // #endregion Imports

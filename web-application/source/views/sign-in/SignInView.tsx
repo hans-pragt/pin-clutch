@@ -23,7 +23,7 @@ export function SignInView() {
       <div className={classnames(
         'flex-1',
         'bg-base-300',
-        'border-4 border-(--pc-outline-color) border-b-0 rounded-t-xl',
+        'border-4 border-(--shadow-500) border-b-0 rounded-t-xl',
         'shadow-(--pc-shadow)'
       )}>
 
