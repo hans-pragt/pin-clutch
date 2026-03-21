@@ -1,0 +1,30 @@
+.pc-input-container {
+  display:        flex;
+  flex-direction: column;
+  gap:            4px;
+}
+
+.pc-text-input {
+  padding:        6px 8px;
+
+  background:     var(--mandarin-300);
+
+  border:         var(--pc-border);
+  border-radius:  var(--pc-border-radius);
+  outline:        none;
+
+  transition:     transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+
+  color:          var(--shadow-500);
+  letter-spacing: 0.8px;
+
+  &:focus {
+    box-shadow:     var(--pc-shadow);
+    transform:      translate(-2px, -2px);
+    background:     var(--mandarin-100);
+  }
+
+  &::placeholder {
+    color:          #8a7a9c;
+  }
+}
