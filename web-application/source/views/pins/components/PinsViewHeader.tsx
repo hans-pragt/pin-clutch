@@ -16,7 +16,7 @@ export function PinsViewHeader() {
       <span className="flex-1 pc-page-header">Clutch</span>
 
       {/* Sign In / Register */}
-      <Link className='pc-button' to="/sign-in">
+      <Link className="pc-button pc-button-primary" to="/sign-in">
         <UserIcon />
         Sign In
       </Link>

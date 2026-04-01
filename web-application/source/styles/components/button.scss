@@ -3,13 +3,22 @@
   flex-direction: row;
   gap:            8px;
   align-items:    center;
+  justify-content: center;
 
   padding:        8px 16px;
 
   font-weight:    700;
   letter-spacing: 0.10rem;
 
-  background-color: var(--mandarin-500);
+  color:            var(--tan-800);
+  
+  &.pc-button-primary {
+    background-color: var(--minty-500);
+  }
+
+  &.pc-button-secondary {
+    background-color: var(--tan-300);
+  }
 
   border:         var(--pc-border);
   border-radius:  var(--pc-border-radius);

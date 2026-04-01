@@ -22,7 +22,7 @@ export function SignInView() {
       {/* Sign In Form */}
       <div className={classnames(
         'flex-1 p-8 flex flex-col gap-6',
-        'bg-(--minty-500)',
+        'bg-(--tan-500)',
         'border-4 border-(--shadow-500) border-b-0 rounded-t-xl',
         'shadow-(--pc-shadow)'
       )}>
@@ -43,7 +43,7 @@ export function SignInView() {
         </div>
 
         {/* Log In or Create Account */}
-        <button className='pc-button'>
+        <button className="pc-button pc-button-secondary">
           Continue
         </button>
 

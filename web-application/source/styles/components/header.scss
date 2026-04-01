@@ -1,6 +1,14 @@
 .pc-page-header {
-  font-family:  'Caprasimo';
-  font-size:    3.75rem;
-  color:        var(--minty-500);
-  line-height:  1;
+  //font-family:    'Bricolage Grotesque';
+  font-family: 'Sora';
+  
+  font-size:      3rem;
+  line-height:    1;
+  font-weight:    900;
+  letter-spacing: -4px;
+
+  text-transform: uppercase;
+  
+  color:          var(--tan-300);
+  text-shadow:    4px 4px 0px var(--shadow-500);
 }

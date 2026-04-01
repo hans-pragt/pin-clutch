@@ -26,7 +26,7 @@ export function PinsView() {
       {/* Page Content */}
       <div className={classnames(
         'flex-1', 
-        'bg-(--minty-500)',
+        'bg-(--tan-500)',
         'flex flex-col',
         'border-4 border-(--shadow-500) border-b-0 rounded-t-xl',
         'shadow-(--pc-shadow)'
