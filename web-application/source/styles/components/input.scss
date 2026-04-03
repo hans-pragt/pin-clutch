@@ -7,7 +7,7 @@
 .pc-text-input {
   padding:        6px 8px;
 
-  background:     var(--mandarin-100);
+  background:     var(--mandarin-200);
 
   border:         var(--pc-border);
   border-radius:  var(--pc-border-radius);
@@ -21,7 +21,7 @@
   &:focus {
     box-shadow:     var(--pc-shadow);
     transform:      translate(-2px, -2px);
-    background:     var(--mandarin-200);
+    background:     var(--mandarin-100);
   }
 
   &::placeholder {
