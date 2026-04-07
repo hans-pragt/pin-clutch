@@ -2,8 +2,13 @@
 
 /* Classnames */
 import classnames from 'classnames';
+
+/* Formik */
 import { Formik } from 'formik';
-import { SignInSchema } from 'schemas/sign-in.schema';
+
+/* Pin Clutch */
+import { Credentials, CredentialsSchema } from 'schemas/credentials.schema';
+import { signInOrCreateAccount } from 'api/authentication.api';
 
 // #endregion Imports
 
@@ -13,6 +18,15 @@ import { SignInSchema } from 'schemas/sign-in.schema';
  * Where a user signs in or creates a new account.
  */
 export function SignInView() {
+
+  // #region Sign In or Create Account
+
+  async function onSignInOrCreateAccount(credentials : Credentials) {
+    await signInOrCreateAccount(credentials.email);
+  }
+
+  // #endregion Sign In or Create Account
+
   return (
     <div className={classnames(
       'mx-auto h-full md:w-lg pt-4',
@@ -29,9 +43,9 @@ export function SignInView() {
         'shadow-(--pc-shadow)'
       )}>
         <Formik 
-          initialValues     = {SignInSchema.cast({})}
-          validationSchema  = {SignInSchema}
-          onSubmit          = {e => console.log(e)}
+          initialValues     = {CredentialsSchema.cast({})}
+          validationSchema  = {CredentialsSchema}
+          onSubmit          = {onSignInOrCreateAccount}
         >
           {({
             values,
