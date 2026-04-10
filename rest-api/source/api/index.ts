@@ -8,7 +8,7 @@ import pinoHTTP from 'pino-http';
 
 /* PinClutch */
 import { logger } from '../logging';
-import AuthorizationRoutes from './authorization/authorization';
+import AuthenticationRoutes from './authentication/authentication';
 
 // #endregion Imports
 
@@ -23,7 +23,9 @@ export function initializeAPI(port : number) {
   application.use(httpLogger);
   
   // Routes
-  application.use('/authorization', AuthorizationRoutes);
+  const router = express.Router();
+  router.use('/authentication', AuthenticationRoutes);
+  application.use('/api/v1', router);
   
   application.listen(
     port, 
