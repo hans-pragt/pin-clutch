@@ -1,1 +1,3 @@
+```
 podman compose --file compose.dev.yaml up --build
+```

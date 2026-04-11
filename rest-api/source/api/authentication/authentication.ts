@@ -18,7 +18,7 @@ router.use(session({
   resave:             true,
   saveUninitialized:  false,
   secret:             'session-signing-secret',
-}))
+}));
 
 // Authentication Setup
 
