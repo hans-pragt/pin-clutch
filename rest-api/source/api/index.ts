@@ -3,6 +3,9 @@
 /* Express */
 import express from 'express';
 
+/* Cors */
+import cors from 'cors';
+
 /* Pino */
 import pinoHTTP from 'pino-http';
 
@@ -22,6 +25,9 @@ export function initializeAPI(port : number) {
   // Logging
   application.use(httpLogger);
   
+  // Cors
+  application.use(cors());  // TODO Fix environment so this is not required.
+
   // Routes
   const router = express.Router();
   router.use('/authentication', AuthenticationRoutes);
