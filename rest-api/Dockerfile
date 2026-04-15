@@ -18,6 +18,8 @@ ENV NODE_ENV=$ENVIRONMENT
 
 EXPOSE 3030
 
+RUN npm install --include=dev --omit=prod
+
 CMD ["npm", "run", "develop"]
 
 ## Production Build ##
