@@ -1,7 +1,7 @@
 // #region Imports
 
 /* Clutch */
-import UserIcon from '@icons/user.svg';
+import UserIcon from '@icons/user.svg?react';
 import { Link } from 'react-router-dom';
 
 // #endregion Imports

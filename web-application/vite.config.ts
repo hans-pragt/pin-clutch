@@ -31,8 +31,6 @@ export default defineConfig({
     tsconfigPaths(),
     react(),
     tailwindcss(),
-    svgr({
-      include: "**/*.svg"
-    })
+    svgr()
   ],
 })

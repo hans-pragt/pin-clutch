@@ -22,11 +22,11 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Paths */
-    "baseUrl": "./source",
     "paths": {
-      "@icons/*": ["icons/*"],
-      "@routes": ["routes/"],
-      "@routes/*": ["routes/*"]
+      "*": ["./source/*"],
+      "@icons/*": ["./source/icons/*"],
+      "@routes": ["./source/routes/"],
+      "@routes/*": ["./source/routes/*"]
     }
   },
   "include": ["source"],
