@@ -13,9 +13,12 @@ import { API_URL } from '../constants';
  */
 export async function signInOrCreateAccount(emailAddress : string) {
   const response = await fetch(
-    API_URL,
+    `${API_URL}/authentication/login_or_create_user`,
     {
       method:   'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body:     JSON.stringify({
         email: emailAddress
       })

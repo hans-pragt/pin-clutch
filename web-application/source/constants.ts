@@ -1,5 +1,5 @@
 // #region API
 
-export const API_URL : string = `${window.location.hostname}/api/v1`;
+export const API_URL : string = `http://${window.location.hostname}:3030/api/v1`;
 
 // #endregion API
