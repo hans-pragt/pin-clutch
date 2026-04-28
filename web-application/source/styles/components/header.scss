@@ -1,5 +1,4 @@
 .pc-page-header {
-  //font-family:    'Bricolage Grotesque';
   font-family: 'Sora';
   
   font-size:      3rem;
@@ -11,4 +10,22 @@
   
   color:          var(--tan-300);
   text-shadow:    4px 4px 0px var(--shadow-500);
+}
+
+.pc-section-header {
+  font-family: 'Sora';
+  
+  font-size:      1.75rem;
+  line-height:    1;
+  font-weight:    900;
+  letter-spacing: -2px;
+
+  text-transform: uppercase;
+  
+  color:          var(--tan-100);
+}
+
+.pc-body-text {
+  font-weight:    700;
+  letter-spacing: 0.08rem;
 }
