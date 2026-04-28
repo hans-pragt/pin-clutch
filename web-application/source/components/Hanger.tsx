@@ -17,7 +17,7 @@ export function Hanger({ className, ...divAttributes } : HTMLAttributes<HTMLDivE
       className={classnames(
         'w-18 h-4',
         'rounded-xl',
-        'bg-(--shadow-500)',
+        'bg-shadow-500',
         'relative',
         className
       )}
@@ -27,7 +27,7 @@ export function Hanger({ className, ...divAttributes } : HTMLAttributes<HTMLDivE
           'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
           'w-6 h-6',
           'rounded-full',
-          'bg-(--shadow-500)'
+          'bg-shadow-500'
         )}
       />
     </div>

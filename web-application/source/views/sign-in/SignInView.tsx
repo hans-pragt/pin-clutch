@@ -14,6 +14,9 @@ import EmailIcon from '@icons/email.svg?react';
 import { Credentials, CredentialsSchema } from 'schemas/credentials.schema';
 import { signInOrCreateAccount } from 'api/authentication.api';
 import { IconPin } from 'components/IconPin';
+import { PageHeader } from 'components/PageHeader';
+import { InlineHeader } from 'components/InlineHeader';
+import { ViewContainer } from 'components/ViewContainer';
 
 // #endregion Imports
 
@@ -50,22 +53,17 @@ export function SignInView() {
       'flex flex-col gap-2'
     )}>
 
-      <span className='pc-page-header'>Sign In</span>
+      <PageHeader label="Sign In" />
 
       {/* Sign In Form */}
-      <div className    = {classnames(
-        'flex-1 p-8',
-        'bg-(--tan-500)',
-        'border-4 border-(--shadow-500) border-b-0 rounded-t-xl',
-        'shadow-(--pc-shadow)'
-      )}>
+      <ViewContainer className="flex-1">
         {
           isMagicLinkSent ?
           (
             <div className='w-full h-full flex flex-col items-center gap-4 mt-12'>
               <IconPin Icon={EmailIcon} />
-              <div className='mt-12 pc-section-header'>Check your email</div>
-              <div className='text-(--shadow-500) text-lg text-center pc-body-text'>We sent you an email with a magic link<br />that will sign you in.</div>
+              <InlineHeader label="Check your email" />
+              <div className='text-shadow-500 text-lg text-center pc-body-text'>We sent you an email with a magic link<br />that will sign you in.</div>
             </div>
           ) :
           (
@@ -118,7 +116,7 @@ export function SignInView() {
             </Formik>
           )
         }
-      </div>
+      </ViewContainer>
     </div>
   );
 };

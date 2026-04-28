@@ -6,7 +6,23 @@
  */
 @theme {
 
-  --font-caprasimo:       'Caprasimo';
+  /* Text */
+
+  --font-sora:            'Sora';
   --font-liter:           'Liter';
+
+  /* Colors */
+
+  --color-shadow-500:     #424242;
+
+  --color-tan-100:        #f2e9e4;
+  --color-tan-300:        #c9ada7;
+  --color-tan-500:        #9a8c98;
+
+  /* Shadows */
+  
+  --shadow-medium:        4px 4px 0 0 var(--color-shadow-500);
+
+  --text-shadow-high:     4px 4px 0px var(--color-shadow-500);
   
 }

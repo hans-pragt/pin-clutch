@@ -27,7 +27,7 @@ export function IconPin({ Icon } : IconPinProperties) {
     <div className={classnames(
       'flex flex-col justify-between items-center px-8 py-6 w-48 h-56',
       'bg-(--tan-100)',
-      'rounded-xl border-4 border-(--shadow-500) shadow-(--pc-shadow)'
+      'rounded-xl border-4 border-shadow-500 (shadow-500--) shadow-(--pc-shadow)'
     )}>
       <Hanger />
       <Icon className='drop-shadow-[2px_2px_2px_rgba(0,0,0,0.25)]' />
