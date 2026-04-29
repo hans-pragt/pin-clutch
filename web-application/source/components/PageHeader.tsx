@@ -32,7 +32,7 @@ export function PageHeader(properties : PageHeaderProperties) {
         'font-sora',
         'text-5xl font-black text-tan-300',
         'uppercase tracking-[-4px]',
-        'text-shadow-high',
+        'text-shadow-medium',
         className
       )}
     >

@@ -22,7 +22,9 @@
   /* Shadows */
   
   --shadow-medium:        4px 4px 0 0 var(--color-shadow-500);
-
-  --text-shadow-high:     4px 4px 0px var(--color-shadow-500);
   
+  --text-shadow-medium:   4px 4px 0px var(--color-shadow-500);
+
+  --drop-shadow-pin:      2px 2px 2px var(--color-shadow-500);
+
 }

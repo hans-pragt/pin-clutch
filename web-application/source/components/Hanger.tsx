@@ -22,6 +22,7 @@ export function Hanger({ className, ...divAttributes } : HTMLAttributes<HTMLDivE
         className
       )}
     >
+      {/* Inside Circle */}
       <div
         className={classnames(
           'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
