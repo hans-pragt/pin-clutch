@@ -17,8 +17,8 @@ export function Application() {
   return (
     <div 
       className={classnames(
-        'font-liter',
         'w-full h-screen', 
+        'font-liter font-bold tracking-wider',
         'bg-(--tan-100)'
       )}
     >

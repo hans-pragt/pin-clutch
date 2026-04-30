@@ -31,7 +31,7 @@ export function SignInView() {
   // #region Sign In or Create Account
 
   const [isSigningIn, setIsSigningIn] = useState<boolean>(false);
-  const [isMagicLinkSent, setIsMagicLinkSent] = useState<boolean>(false);
+  const [isMagicLinkSent, setIsMagicLinkSent] = useState<boolean>(true);
 
   async function onSignInOrCreateAccount(credentials : Credentials) {
     setIsSigningIn(true);
