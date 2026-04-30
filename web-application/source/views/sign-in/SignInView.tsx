@@ -17,6 +17,7 @@ import { IconPin } from 'components/IconPin';
 import { PageHeader } from 'components/PageHeader';
 import { InlineHeader } from 'components/InlineHeader';
 import { ViewContainer } from 'components/ViewContainer';
+import { TextInput } from 'components/input/TextInput';
 
 // #endregion Imports
 
@@ -30,7 +31,7 @@ export function SignInView() {
   // #region Sign In or Create Account
 
   const [isSigningIn, setIsSigningIn] = useState<boolean>(false);
-  const [isMagicLinkSent, setIsMagicLinkSent] = useState<boolean>(true);
+  const [isMagicLinkSent, setIsMagicLinkSent] = useState<boolean>(false);
 
   async function onSignInOrCreateAccount(credentials : Credentials) {
     setIsSigningIn(true);
@@ -85,22 +86,14 @@ export function SignInView() {
                 >
 
                   {/* Email Address */}
-                  <div className="pc-input-container">
-                    <label 
-                      className   = "pc-text-input-label"
-                      htmlFor     = "email"
-                    >
-                      Email Address
-                    </label>
-                    <input 
-                      className   = "pc-text-input"
-                      name        = "email" 
-                      type        = "text"
-                      value       = {values.email}
-                      onChange    = {handleChange}
-                      onBlur      = {handleBlur}
-                    />
-                  </div>
+                  <TextInput
+                    name          = "email"
+                    type          = "text"
+                    label         = "Email Address"
+                    value         = {values.email}
+                    onChange      = {handleChange}
+                    onBlur        = {handleBlur}
+                  />
 
                   {/* Log In or Create Account */}
                   <button 

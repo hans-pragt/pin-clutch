@@ -19,6 +19,15 @@
   --color-tan-300:        #c9ada7;
   --color-tan-500:        #9a8c98;
 
+  --color-mandarin-100:   #faeee7;
+  --color-mandarin-200:   #f9e3da;
+
+  --color-aubergine-200:  #8a7a9c;
+
+  /* Borders */
+
+  
+
   /* Shadows */
   
   --shadow-medium:        4px 4px 0 0 var(--color-shadow-500);
