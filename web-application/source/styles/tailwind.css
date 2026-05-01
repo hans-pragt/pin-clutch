@@ -1,3 +1,10 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Liter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+/* Tailwind */
+
 @import 'tailwindcss';
 
 /**
@@ -22,6 +29,8 @@
 
   --color-mandarin-100:   #faeee7;
   --color-mandarin-200:   #f9e3da;
+  --color-mandarin-300:   #f3c6b4;
+  --color-mandarin-500:   #e07144;
 
   --color-minty-500:      #90ee90;
 
