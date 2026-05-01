@@ -2,6 +2,7 @@
 
 /* Clutch */
 import UserIcon from '@icons/user.svg?react';
+import { PageHeader } from 'components/PageHeader';
 import { Link } from 'react-router-dom';
 
 // #endregion Imports
@@ -13,7 +14,10 @@ export function PinsViewHeader() {
     <div className="flex flex-row items-center">
 
       {/* Application */}
-      <span className="flex-1 pc-page-header">Clutch</span>
+      <PageHeader 
+        className   = "flex-1"
+        label       = "Clutch"
+      />
 
       {/* Sign In / Register */}
       <Link className="pc-button pc-button-primary" to="/sign-in">

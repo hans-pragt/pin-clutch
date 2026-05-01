@@ -5,8 +5,11 @@ import { Outlet } from 'react-router-dom';
 
 /* Classnames */
 import classnames from 'classnames';
+
+/* Clutch */
 import { SearchPanel } from './components/SearchPanel';
 import { PinsViewHeader } from './components/PinsViewHeader';
+import { ViewContainer } from 'components/ViewContainer';
 
 // #endregion Imports
 
@@ -24,16 +27,10 @@ export function PinsView() {
       <PinsViewHeader />
 
       {/* Page Content */}
-      <div className={classnames(
-        'flex-1', 
-        'bg-(--tan-500)',
-        'flex flex-col',
-        'border-4 border-shadow-500 border-b-0 rounded-t-xl',
-        'shadow-(--pc-shadow)'
-      )}>
+      <ViewContainer className="flex-1">
         <SearchPanel />
         <Outlet />
-      </div>
+      </ViewContainer>
 
     </div>
   );
