@@ -9,7 +9,6 @@ import './styles/tailwind.css';
 
 /* Clutch */
 import './styles/primitives/index.scss';
-import './styles/components/index.scss';
 import { Application } from 'Application';
 
 // #endregion Imports

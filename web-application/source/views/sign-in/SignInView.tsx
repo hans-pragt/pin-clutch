@@ -18,6 +18,7 @@ import { PageHeader } from 'components/PageHeader';
 import { InlineHeader } from 'components/InlineHeader';
 import { ViewContainer } from 'components/ViewContainer';
 import { TextInput } from 'components/input/TextInput';
+import { Button } from 'components/input/Button';
 
 // #endregion Imports
 
@@ -31,7 +32,7 @@ export function SignInView() {
   // #region Sign In or Create Account
 
   const [isSigningIn, setIsSigningIn] = useState<boolean>(false);
-  const [isMagicLinkSent, setIsMagicLinkSent] = useState<boolean>(true);
+  const [isMagicLinkSent, setIsMagicLinkSent] = useState<boolean>(false);
 
   async function onSignInOrCreateAccount(credentials : Credentials) {
     setIsSigningIn(true);
@@ -96,13 +97,11 @@ export function SignInView() {
                   />
 
                   {/* Log In or Create Account */}
-                  <button 
-                    className   = "pc-button pc-button-secondary"
+                  <Button
+                    label       = "Continue"
                     type        = "submit"
                     disabled    = {!isValid || isSigningIn}
-                  >
-                    Continue
-                  </button>
+                  />
 
                 </form>
               )}
