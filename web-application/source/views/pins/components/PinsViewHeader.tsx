@@ -3,7 +3,7 @@
 /* Clutch */
 import UserIcon from '@icons/user.svg?react';
 import { PageHeader } from 'components/PageHeader';
-import { Link } from 'react-router-dom';
+import { RouterLink } from 'components/input/RouterLink';
 
 // #endregion Imports
 
@@ -20,10 +20,13 @@ export function PinsViewHeader() {
       />
 
       {/* Sign In / Register */}
-      <Link className="pc-button pc-button-primary" to="/sign-in">
-        <UserIcon />
-        Sign In
-      </Link>
+      <RouterLink
+        className='min-w-48'
+        kind="accent"
+        to="/sign-in"
+        icon={UserIcon}
+        label="Sign In"
+      />
 
     </div>
   );

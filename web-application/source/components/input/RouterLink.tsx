@@ -1,7 +1,8 @@
 // #region Imports
 
 /* React */
-import { ButtonHTMLAttributes, ComponentType, SVGProps } from 'react';
+import { ComponentType, SVGProps } from 'react';
+import { Link, LinkProps } from 'react-router-dom';
 
 /* Classnames */
 import classnames from 'classnames';
@@ -10,7 +11,7 @@ import classnames from 'classnames';
 
 // #region Properties
 
-interface ButtonProperties extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProperties extends LinkProps {
 
   /**
    * The text to display on the button.
@@ -36,7 +37,7 @@ interface ButtonProperties extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 // #region Component
 
-export function Button(properties : ButtonProperties) {
+export function RouterLink(properties : ButtonProperties) {
   const {
     label,
     kind            = 'default',
@@ -48,7 +49,7 @@ export function Button(properties : ButtonProperties) {
   } = properties;
 
   return (
-    <button
+    <Link
       {...htmlButtonAttributes}
       className   = {classnames(
         'px-4 py-2',
@@ -71,7 +72,7 @@ export function Button(properties : ButtonProperties) {
         Icon && <Icon />
       }
       {label}
-    </button>
+    </Link>
   )
 }
 
