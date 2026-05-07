@@ -64,8 +64,8 @@ export function SignInView() {
           (
             <div className='w-full h-full flex flex-col items-center gap-4 mt-12'>
               <IconPin Icon={EmailIcon} />
-              <InlineHeader label="Check your email" />
-              <div className='text-shadow-500 text-lg text-center pc-body-text'>We sent you an email with a magic link<br />that will sign you in.</div>
+              <InlineHeader className="mt-6" label="Check your email" />
+              <div className="text-shadow-500 text-lg text-center pc-body-text">We sent you an email with a magic link<br />that will sign you in.</div>
             </div>
           ) :
           (
