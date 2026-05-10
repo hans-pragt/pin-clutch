@@ -13,7 +13,7 @@ import { API_URL } from '../constants';
  * 
  * @param emailAddress The email address to sign in with.
  */
-export async function signInOrCreateAccount(emailAddress : string) {
+export async function signInOrCreateAccount(emailAddress : string) : Promise<boolean> {
   const response = await fetch(
     `${API_URL}/authentication/login_or_create_user`,
     {
@@ -27,9 +27,7 @@ export async function signInOrCreateAccount(emailAddress : string) {
     }
   );
 
-  if (response.status !== 200) {
-    throw new Error('Unable to sign or create a new account');
-  }
+  return response.ok;
 }
 
 /**
@@ -50,11 +48,7 @@ export async function authenticateAccount(token : string) : Promise<boolean> {
     }
   );
 
-  if (response.status !== 200) {
-    throw new Error('Unable to authenticate account.');
-  }
-
-  return response.status === 200;
+  return response.ok;
 }
 
 // #endregion Authentication

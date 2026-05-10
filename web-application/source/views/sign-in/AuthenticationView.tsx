@@ -35,8 +35,9 @@ export function AuthenticationView() {
 
       async function authenticate(token : string) {
         try {
-          await authenticateAccount(token);
-          navigate('/');
+          if (await authenticateAccount(token)) {
+            navigate('/');
+          }
         }
 
         // On error, direct back to sign in page.

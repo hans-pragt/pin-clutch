@@ -38,8 +38,9 @@ export function SignInView() {
     setIsSigningIn(true);
 
     try {
-      await signInOrCreateAccount(credentials.email);
-      setIsMagicLinkSent(true);
+      if (await signInOrCreateAccount(credentials.email)) {
+        setIsMagicLinkSent(true);
+      }
     }
 
     finally {
