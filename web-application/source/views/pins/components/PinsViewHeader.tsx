@@ -1,7 +1,7 @@
 // #region Imports
 
 /* Clutch */
-import UserIcon from '@icons/user.svg?react';
+import UserIcon from '@icons/monotone/user.svg?react';
 import { PageHeader } from 'components/PageHeader';
 import { RouterLink } from 'components/input/RouterLink';
 

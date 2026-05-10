@@ -10,7 +10,7 @@ import classnames from 'classnames';
 import { Formik } from 'formik';
 
 /* Pin Clutch */
-import EmailIcon from '@icons/email.svg?react';
+import EmailIcon from '@icons/duotone/email.svg?react';
 import { Credentials, CredentialsSchema } from 'schemas/credentials.schema';
 import { signInOrCreateAccount } from 'api/authentication.api';
 import { IconPin } from 'components/IconPin';

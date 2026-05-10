@@ -1,7 +1,7 @@
 // #region Imports
 
 /* Clutch */
-import AddIcon from '@icons/add.svg';
+import AddIcon from '@icons/monotone/add.svg';
 
 // #endregion Imports
 
