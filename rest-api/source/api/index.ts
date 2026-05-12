@@ -2,6 +2,7 @@
 
 /* Express */
 import express from 'express';
+import session from 'express-session';
 
 /* Cors */
 import cors from 'cors';
@@ -12,6 +13,7 @@ import pinoHTTP from 'pino-http';
 /* PinClutch */
 import { logger } from '../logging';
 import AuthenticationRoutes from './authentication/authentication';
+import UsersRoutes from './users/users';
 
 // #endregion Imports
 
@@ -30,7 +32,15 @@ export function initializeAPI(port : number) {
 
   // Routes
   const router = express.Router();
+
+  router.use(session({
+    resave:             true,
+    saveUninitialized:  false,
+    secret:             'session-signing-secret',
+  }));
+
   router.use('/authentication', AuthenticationRoutes);
+  router.use('/users', UsersRoutes);
   application.use('/api/v1', router);
   
   application.listen(

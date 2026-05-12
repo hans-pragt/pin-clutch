@@ -2,40 +2,22 @@
 
 /* Express */
 import express, { Request, Response } from 'express';
-import session from 'express-session';
 
 /* Stytch */
-import { Client, MagicLinksEmailLoginOrCreateRequest } from 'stytch';
+import { MagicLinksEmailLoginOrCreateRequest } from 'stytch';
 
 /* Pin Clutch */
 import { logger } from '../../logging';
+import { stytchClient } from '../../authentication';
 
 // #endregion Imports
 
-// Router Setup
+// #region Route Setup
 
 const router = express.Router();
-
 router.use(express.json());
-router.use(session({
-  resave:             true,
-  saveUninitialized:  false,
-  secret:             'session-signing-secret',
-}));
 
-// Authentication Setup
-
-if (!process.env.STYTCH_PROJECT_ID || !process.env.STYTCH_SECRET) {
-  logger.fatal('Attempted to initialize authentication without the proper environment variables.');
-  throw new Error('The Stytch environment variables are not set.');
-}
-
-const stytchClient = new Client({
-  project_id: process.env.STYTCH_PROJECT_ID,
-  secret:     process.env.STYTCH_SECRET
-});
-
-// #region Routes
+// #endregion Route Setup
 
 /**
  * Logs in or creates a new user by sending a 'magic link' to the email address
@@ -63,18 +45,19 @@ router.post(
 );
 
 /**
- * Check to see the user is authenticated.
+ * Check to see the user is authenticated. This request will only work once for
+ * a given token.
  */
 router.get(
   '/authenticate',
-  async (request : Request<{}, {}, {}, { token : string }>, response : Response) => {
+  async (request : Request<{}, {}, {}, { token : string }>, response : Response<{}>) => {
     const token = request.query.token;
     const stytchResponse = await stytchClient.magicLinks.authenticate({
       token,
       session_duration_minutes: 60
     });
     
-    (request.session as any).jwt = stytchResponse.session_jwt;
+    request.session.jwt = stytchResponse.session_jwt;
     response.status(stytchResponse.status_code);
   }
 );
