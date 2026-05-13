@@ -30,8 +30,8 @@ router.post(
 
     const stytchRequestParameters : MagicLinksEmailLoginOrCreateRequest = {
       email:                    request.body.email,
-      login_magic_link_url:     'http://localhost:7070/authenticate',
-      signup_magic_link_url:    'http://localhost:7070/authenticate'
+      login_magic_link_url:     process.env.STYTCH_LOGIN_LINK_URL,
+      signup_magic_link_url:    process.env.STYTCH_SIGNUP_LINK_URL
     }
 
     const stytchResponse = await stytchClient.magicLinks.email.loginOrCreate(stytchRequestParameters);
