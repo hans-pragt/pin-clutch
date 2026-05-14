@@ -9,6 +9,7 @@ import { MagicLinksEmailLoginOrCreateRequest } from 'stytch';
 /* Pin Clutch */
 import { logger } from '../../logging';
 import { stytchClient } from '../../authentication';
+import { getReasonPhrase } from 'http-status-codes';
 
 // #endregion Imports
 
@@ -52,13 +53,16 @@ router.get(
   '/authenticate',
   async (request : Request<{}, {}, {}, { token : string }>, response : Response<{}>) => {
     const token = request.query.token;
+
     const stytchResponse = await stytchClient.magicLinks.authenticate({
       token,
       session_duration_minutes: 60
     });
     
     request.session.jwt = stytchResponse.session_jwt;
-    response.status(stytchResponse.status_code);
+    response
+      .status(stytchResponse.status_code)
+      .send(getReasonPhrase(stytchResponse.status_code));
   }
 );
 
