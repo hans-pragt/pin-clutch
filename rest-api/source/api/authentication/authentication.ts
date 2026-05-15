@@ -27,7 +27,7 @@ router.use(express.json());
 router.post(
   '/login_or_create_user', 
   async (request : Request<{}, {}, { email : string }>, response : Response) => {
-    logger.info('New authentication request received.');
+    logger.info('New log-in request received.');
 
     const stytchRequestParameters : MagicLinksEmailLoginOrCreateRequest = {
       email:                    request.body.email,

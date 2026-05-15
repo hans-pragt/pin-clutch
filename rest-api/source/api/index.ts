@@ -28,7 +28,10 @@ export function initializeAPI(port : number) {
   application.use(httpLogger);
   
   // Cors
-  application.use(cors());  // TODO Fix environment so this is not required.
+  application.use(cors({ 
+    credentials: true,
+    origin: 'http://localhost:7070'
+  }));  // TODO Fix environment so this is not required.
 
   // Routes
   const router = express.Router();

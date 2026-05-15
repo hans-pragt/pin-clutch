@@ -9,6 +9,7 @@ import { StatusCodes, getReasonPhrase } from 'http-status-codes';
 /* Clutch */
 import { stytchClient } from '../../authentication';
 import { User } from './types';
+import { STATUS_CODES } from 'http';
 
 // #endregion Imports
 
@@ -31,19 +32,20 @@ router.use(express.json());
 router.get(
   '/me',
   async (request : Request, response : Response<User | string>) => {
-    const jwt = request.session.jwt;
-    const stytchResponse = await stytchClient.sessions.authenticate({ session_jwt: jwt });
-
-    if (stytchResponse.status_code !== StatusCodes.OK) {
-      response
-        .status(StatusCodes.UNAUTHORIZED)
-        .send(getReasonPhrase(StatusCodes.UNAUTHORIZED))
-      return;
+    try {
+      const jwt = request.session.jwt;
+      const stytchResponse = await stytchClient.sessions.authenticate({ session_jwt: jwt });
+      
+      response.json({
+        id: stytchResponse.user.user_id
+      });
     }
 
-    response.json({
-      id: stytchResponse.user.user_id
-    });
+    catch {
+      response
+        .status(StatusCodes.UNAUTHORIZED)
+        .send(getReasonPhrase(StatusCodes.UNAUTHORIZED));
+    }
   }
 );
 
