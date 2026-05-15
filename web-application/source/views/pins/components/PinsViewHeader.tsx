@@ -2,14 +2,29 @@
 
 /* Clutch */
 import UserIcon from '@icons/monotone/user.svg?react';
+import { getMe } from 'api/users.api';
 import { PageHeader } from 'components/PageHeader';
 import { RouterLink } from 'components/input/RouterLink';
+import { useEffect } from 'react';
 
 // #endregion Imports
 
 // #region Component
 
 export function PinsViewHeader() {
+
+  useEffect(
+    () => {
+      async function getMeAsync() {
+        const me = getMe();
+        console.log(me);
+      }
+
+      getMeAsync();
+    },
+    []
+  );
+
   return (
     <div className="flex flex-row items-center">
 

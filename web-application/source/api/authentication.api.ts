@@ -44,7 +44,8 @@ export async function authenticateAccount(token : string) : Promise<boolean> {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-      }
+      },
+      credentials: 'include'
     }
   );
 
