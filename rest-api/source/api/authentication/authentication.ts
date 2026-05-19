@@ -9,7 +9,7 @@ import { MagicLinksEmailLoginOrCreateRequest } from 'stytch';
 /* Pin Clutch */
 import { logger } from '../../logging';
 import { stytchClient } from '../../authentication';
-import { getReasonPhrase } from 'http-status-codes';
+import { getReasonPhrase, StatusCodes } from 'http-status-codes';
 
 // #endregion Imports
 
@@ -46,12 +46,35 @@ router.post(
 );
 
 /**
+ * Allows the user to log out, provided they have a valid web token.
+ */
+router.post(
+  '/logout',
+  async (request : Request, response : Response) => {
+    try {
+      const token = request.session.jwt;
+      stytchClient.sessions.revoke({ session_jwt: token });
+
+      response
+        .status(StatusCodes.OK)
+        .send(getReasonPhrase(StatusCodes.OK));
+    }
+
+    catch {
+      response
+        .status(StatusCodes.BAD_REQUEST)
+        .send(getReasonPhrase(StatusCodes.BAD_REQUEST));
+    }
+  }
+)
+
+/**
  * Check to see the user is authenticated. This request will only work once for
  * a given token.
  */
 router.get(
   '/authenticate',
-  async (request : Request<{}, {}, {}, { token : string }>, response : Response<{}>) => {
+  async (request : Request<{}, {}, {}, { token : string }>, response : Response<string>) => {
     const token = request.query.token;
 
     const stytchResponse = await stytchClient.magicLinks.authenticate({
