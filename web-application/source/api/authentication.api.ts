@@ -31,6 +31,23 @@ export async function signInOrCreateAccount(emailAddress : string) : Promise<boo
 }
 
 /**
+ * Allows an authenticated user to sign out, ending their session.
+ */
+export async function signOut() {
+  const response = await fetch(
+    `${API_URL}/authentication/logout`,
+    {
+      method:   'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    }
+  );
+
+  return response.ok;
+}
+
+/**
  * Someone who has just logged in has a link with a token, use this to validate
  * that token, after which a jwt will be assigned to the session.
  * 
