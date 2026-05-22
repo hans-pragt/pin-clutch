@@ -3,13 +3,11 @@
 /* React */
 import { useState } from 'react';
 
-/* Classnames */
-import classnames from 'classnames';
-
 /* Formik */
 import { Formik } from 'formik';
 
-/* Pin Clutch */
+/* Clutch */
+import { cn } from '@styles';
 import EmailIcon from '@icons/duotone/email.svg?react';
 import { Credentials, CredentialsSchema } from 'schemas/credentials.schema';
 import { signInOrCreateAccount } from 'api/authentication.api';
@@ -51,7 +49,7 @@ export function SignInView() {
   // #endregion Sign In or Create Account
 
   return (
-    <div className={classnames(
+    <div className={cn(
       'mx-auto h-full md:w-lg pt-4',
       'flex flex-col gap-2'
     )}>

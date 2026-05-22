@@ -3,10 +3,8 @@
 /* React Router Dom */
 import { Outlet } from 'react-router-dom';
 
-/* Classnames */
-import classnames from 'classnames';
-
 /* Clutch */
+import { cn } from '@styles';
 import { SearchPanel } from './components/SearchPanel';
 import { PinsViewHeader } from './components/PinsViewHeader';
 import { ViewContainer } from 'components/ViewContainer';
@@ -20,7 +18,7 @@ import { ViewContainer } from 'components/ViewContainer';
  */
 export function PinsView() {
   return (
-    <div className={classnames(
+    <div className={cn(
       'container md:mx-auto h-full pt-4', 
       'flex flex-col gap-2'
     )}>

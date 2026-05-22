@@ -3,10 +3,8 @@
 /* React */
 import { FC, SVGProps } from 'react';
 
-/* Classnames */
-import classnames from 'classnames';
-
 /* Clutch */
+import { cn } from '@styles';
 import { Hanger } from './Hanger';
 
 // #endregion Imports
@@ -28,7 +26,7 @@ interface IconPinProperties {
 
 export function IconPin({ Icon } : IconPinProperties) {
   return (
-    <div className={classnames(
+    <div className={cn(
       'flex flex-col justify-between items-center px-8 py-6 w-48 h-56',
       'bg-tan-100',
       'rounded-xl border-4 border-shadow-500 shadow-medium'

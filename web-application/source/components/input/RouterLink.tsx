@@ -4,8 +4,8 @@
 import { ComponentType, SVGProps } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
-/* Classnames */
-import classnames from 'classnames';
+/* Clutch */
+import { cn } from '@styles';
 
 // #endregion Imports
 
@@ -51,7 +51,7 @@ export function RouterLink(properties : ButtonProperties) {
   return (
     <Link
       {...htmlButtonAttributes}
-      className   = {classnames(
+      className   = {cn(
         'px-4 py-2',
         'flex flex-row gap-2 items-center justify-center',
         'font-liter text-tan-800 font-bold tracking-wider',

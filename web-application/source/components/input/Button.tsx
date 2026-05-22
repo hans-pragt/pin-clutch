@@ -3,8 +3,8 @@
 /* React */
 import { ButtonHTMLAttributes, ComponentType, SVGProps } from 'react';
 
-/* Classnames */
-import classnames from 'classnames';
+/* Clutch */
+import { cn } from '@styles';
 
 // #endregion Imports
 
@@ -50,7 +50,7 @@ export function Button(properties : ButtonProperties) {
   return (
     <button
       {...htmlButtonAttributes}
-      className   = {classnames(
+      className   = {cn(
         'px-4 py-2',
         'flex flex-row gap-2 items-center justify-center',
         'font-liter text-tan-800 font-bold tracking-wider',

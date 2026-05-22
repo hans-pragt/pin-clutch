@@ -10,6 +10,7 @@ import { PageHeader } from 'components/PageHeader';
 import { RouterLink } from 'components/input/RouterLink';
 import { Button } from 'components/input/Button';
 import { signOut } from 'api/authentication.api';
+import { ProfileMenu } from './ProfileMenu';
 
 // #endregion Imports
 
@@ -39,27 +40,9 @@ export function PinsViewHeader() {
         label       = "Clutch"
       />
 
-      {/* Sign In / Register */}
-      {
-        !userData && !userDataIsLoading &&
-        <RouterLink
-          className="min-w-48"
-          kind="accent"
-          to="/sign-in"
-          icon={UserIcon}
-          label="Sign In"
-        />
-      }
+      
 
-      {/* Sign Out */}
-      {
-        userData && !userDataIsLoading &&
-        <Button
-          className="min-w-48"
-          label="Sign Out"
-          onClick={onSignOut}
-        />
-      }
+      <ProfileMenu />
 
 
     </div>

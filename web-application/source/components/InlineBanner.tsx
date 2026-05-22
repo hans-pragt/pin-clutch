@@ -1,9 +1,7 @@
 // #region Imports
 
-/* Classnames */
-import classNames from 'classnames';
-
 /* Clutch */
+import { cn } from '@styles';
 import CircleExclamationIcon from '@icons/monotone/circle-exclamation.svg?react';
 
 // #endregion Imports
@@ -16,7 +14,7 @@ import CircleExclamationIcon from '@icons/monotone/circle-exclamation.svg?react'
 
 export function InlineBanner() {
   return (
-    <div className={classNames(
+    <div className={cn(
       'bg-mandarin-500',
       'text-tan-100 text-sm font-normal',
       'w-full p-4 rounded-xl',
