@@ -1,10 +1,11 @@
 // #region Imports
 
 /* React */
-import { ButtonHTMLAttributes, ComponentType, SVGProps } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 
 /* Clutch */
 import { cn } from '@styles';
+import { IconType } from '@icons';
 
 // #endregion Imports
 
@@ -26,7 +27,7 @@ interface ButtonProperties extends ButtonHTMLAttributes<HTMLButtonElement> {
 
   // #region Icon
   
-  icon? : ComponentType<SVGProps<SVGSVGElement>>
+  icon? : IconType;
 
   // #endregion Icon
 
@@ -67,9 +68,7 @@ export function Button(properties : ButtonProperties) {
         className
       )}
     >
-      {
-        Icon && <Icon />
-      }
+      {Icon && <Icon />}
       {label}
     </button>
   )

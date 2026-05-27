@@ -24,6 +24,7 @@
     /* Paths */
     "paths": {
       "*": ["./source/*"],
+      "@icons": ["./source/icons/"],
       "@icons/*": ["./source/icons/*"],
       "@routes": ["./source/routes/"],
       "@routes/*": ["./source/routes/*"],
