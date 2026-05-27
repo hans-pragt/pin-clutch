@@ -3,8 +3,8 @@
 /* React */
 import { HTMLAttributes } from 'react';
 
-/* Classnames */
-import classnames from 'classnames';
+/* Clutch */
+import { cn } from '@styles';
 
 // #endregion Imports
 
@@ -14,7 +14,7 @@ export function Hanger({ className, ...divAttributes } : HTMLAttributes<HTMLDivE
   return (
     <div 
       {...divAttributes}
-      className={classnames(
+      className={cn(
         'w-18 h-4',
         'rounded-xl',
         'bg-shadow-500',
@@ -24,7 +24,7 @@ export function Hanger({ className, ...divAttributes } : HTMLAttributes<HTMLDivE
     >
       {/* Inside Circle */}
       <div
-        className={classnames(
+        className={cn(
           'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
           'w-6 h-6',
           'rounded-full',

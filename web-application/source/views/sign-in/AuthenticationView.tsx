@@ -1,16 +1,14 @@
 // #region Imports
 
 /* React */
+import { useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 
-/* Classnames */
-import classnames from 'classnames';
-
-/* Telestream */
+/* Clutch */
+import { cn } from '@styles';
 import KeyIcon from '@icons/duotone/key.svg?react';
 import { PageHeader } from 'components/PageHeader';
 import { ViewContainer } from 'components/ViewContainer';
-import { useEffect } from 'react';
 import { authenticateAccount } from 'api/authentication.api';
 import { InlineHeader } from 'components/InlineHeader';
 import { IconPin } from 'components/IconPin';
@@ -54,7 +52,7 @@ export function AuthenticationView() {
   // #endregion Authenticate
 
   return (
-    <div className={classnames(
+    <div className={cn(
       'mx-auto h-full md:w-lg pt-4',
       'flex flex-col gap-2'
     )}>

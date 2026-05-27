@@ -3,8 +3,8 @@
 /* React */
 import { HTMLAttributes } from 'react';
 
-/* Classnames */
-import classnames from 'classnames';
+/* Clutch */
+import { cn } from '@styles';
 
 // #endregion Imports
 
@@ -28,7 +28,7 @@ export function InlineHeader(properties : InlineHeaderProperties) {
   return (
     <div
       {...htmlDivAttributes}
-      className={classnames(
+      className={cn(
         'font-sora',
         'text-3xl font-black text-tan-100',
         'uppercase tracking-[-2px]',

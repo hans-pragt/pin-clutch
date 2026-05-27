@@ -3,10 +3,8 @@
 /* React Router */
 import { RouterProvider } from 'react-router-dom';
 
-/* Classnames */
-import classnames from 'classnames';
-
 /* Clutch */
+import { cn } from '@styles';
 import { router } from '@routes';
 
 // #endregion Imports
@@ -16,7 +14,7 @@ import { router } from '@routes';
 export function Application() {
   return (
     <div 
-      className={classnames(
+      className={cn(
         'w-full h-screen', 
         'font-liter font-bold tracking-wider text-shadow-500',
         'bg-tan-100'

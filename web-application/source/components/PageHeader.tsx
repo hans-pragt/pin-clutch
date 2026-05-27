@@ -3,8 +3,8 @@
 /* React */
 import { HTMLAttributes } from 'react';
 
-/* Classnames */
-import classnames from 'classnames';
+/* Clutch */
+import { cn } from '@styles';
 
 // #endregion Imports
 
@@ -28,7 +28,7 @@ export function PageHeader(properties : PageHeaderProperties) {
   return (
     <div
       {...htmlDivAttributes}
-      className={classnames(
+      className={cn(
         'font-sora',
         'text-5xl font-black text-tan-300',
         'uppercase tracking-[-4px]',

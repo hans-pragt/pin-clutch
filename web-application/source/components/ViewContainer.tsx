@@ -3,8 +3,8 @@
 /* React */
 import { HTMLAttributes } from 'react';
 
-/* Classnames */
-import classnames from 'classnames';
+/* Clutch */
+import { cn } from '@styles';
 
 // #endregion Imports
 
@@ -26,7 +26,7 @@ export function ViewContainer(properties : ViewContainerProperties) {
   return (
     <div
       {...htmlDivAttributes}
-      className={classnames(
+      className={cn(
         'rounded-t-xl p-8',
         'border-4 border-shadow-500 border-b-0',
         'shadow-medium',

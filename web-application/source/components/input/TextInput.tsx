@@ -3,8 +3,8 @@
 /* React */
 import { InputHTMLAttributes } from 'react';
 
-/* Classnames */
-import classnames from 'classnames';
+/* Clutch */
+import { cn } from '@styles';
 
 // #endregion Imports
 
@@ -27,7 +27,7 @@ export function TextInput(properties : TextInputProperties) {
 
   return (
     <div
-      className={classnames(
+      className={cn(
         'flex flex-col gap-1',
         className
       )}
@@ -40,7 +40,7 @@ export function TextInput(properties : TextInputProperties) {
       }
       <input
         {...htmlInputAttributes}
-        className = {classnames(
+        className = {cn(
           'px-2 py-1.5',
           'rounded-xl border-4 border-shadow-500 outline-none',
           'bg-mandarin-200 focus:bg-mandarin-100',
