@@ -41,15 +41,17 @@ export function MenuItem(properties : MenuItemProperties) {
   return (
     <li 
       {...liAttributes}
+      role="menuitem"
       className={cn(
-        'cursor-pointer',
+        'cursor-default',
         'p-2',
+        'flex flex-row gap-2',
         'rounded-xl border-4 border-transparent hover:border-shadow-500',
         'active:translate-1.5 active:shadow-low',
         className
       )}
     >
-      {Icon && <Icon />}
+      {Icon && <Icon aria-hidden="true" />}
       {label}
     </li>
   );

@@ -97,10 +97,11 @@ export function SignInView() {
 
                   {/* Log In or Create Account */}
                   <Button
-                    label       = "Continue"
                     type        = "submit"
                     disabled    = {!isValid || isSigningIn}
-                  />
+                  >
+                    Continue
+                  </Button>
 
                 </form>
               )}

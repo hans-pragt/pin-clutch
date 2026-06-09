@@ -1,11 +1,10 @@
 // #region Imports
 
 /* React */
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
 /* Clutch */
 import { cn } from '@styles';
-import { IconType } from '@icons';
 
 // #endregion Imports
 
@@ -14,22 +13,11 @@ import { IconType } from '@icons';
 interface ButtonProperties extends ButtonHTMLAttributes<HTMLButtonElement> {
 
   /**
-   * The text to display on the button.
-   */
-  label : string;
-
-  /**
    * Controls the appearance of the button.
    * 
    * @default 'default'
    */
   kind? : 'default' | 'accent';
-
-  // #region Icon
-  
-  icon? : IconType;
-
-  // #endregion Icon
 
 }
 
@@ -37,12 +25,10 @@ interface ButtonProperties extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 // #region Component
 
-export function Button(properties : ButtonProperties) {
+export function Button(properties : PropsWithChildren<ButtonProperties>) {
   const {
-    label,
     kind            = 'default',
-
-    icon: Icon,
+    children,
 
     className,
     ...htmlButtonAttributes
@@ -68,8 +54,7 @@ export function Button(properties : ButtonProperties) {
         className
       )}
     >
-      {Icon && <Icon />}
-      {label}
+      {children}
     </button>
   )
 }
