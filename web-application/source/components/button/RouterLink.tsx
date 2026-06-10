@@ -1,7 +1,6 @@
 // #region Imports
 
 /* React */
-import { ComponentType, SVGProps } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
 /* Clutch */
@@ -14,22 +13,11 @@ import { cn } from '@styles';
 interface ButtonProperties extends LinkProps {
 
   /**
-   * The text to display on the button.
-   */
-  label : string;
-
-  /**
    * Controls the appearance of the button.
    * 
    * @default 'default'
    */
   kind? : 'default' | 'accent';
-
-  // #region Icon
-  
-  icon? : ComponentType<SVGProps<SVGSVGElement>>
-
-  // #endregion Icon
 
 }
 
@@ -39,12 +27,10 @@ interface ButtonProperties extends LinkProps {
 
 export function RouterLink(properties : ButtonProperties) {
   const {
-    label,
     kind            = 'default',
 
-    icon: Icon,
-
     className,
+    children,
     ...htmlButtonAttributes
   } = properties;
 
@@ -68,10 +54,7 @@ export function RouterLink(properties : ButtonProperties) {
         className
       )}
     >
-      {
-        Icon && <Icon />
-      }
-      {label}
+      {children}
     </Link>
   )
 }

@@ -8,7 +8,6 @@ import UserIcon from '@icons/monotone/user.svg?react';
 import { getMe } from 'api/users.api';
 import { PageHeader } from 'components/PageHeader';
 import { RouterLink } from 'components/button/RouterLink';
-import { Button } from 'components/button/Button';
 import { signOut } from 'api/authentication.api';
 import { ProfileMenu } from './ProfileMenu';
 
@@ -23,8 +22,6 @@ export function PinsViewHeader() {
   const { data : userData, isLoading : userDataIsLoading, mutate } = useSWR('/users/me', getMe);
 
   async function onSignOut() {
-    console.log('sign out');
-
     await signOut();
     mutate(undefined);
   }
@@ -40,10 +37,24 @@ export function PinsViewHeader() {
         label       = "Clutch"
       />
 
-      
+      {/* Unauthenticated User */}
+      {
+        !userData &&
+        <RouterLink 
+          className = "w-48"
+          kind      = "accent"
+          to        = "/sign-in"
+        >
+          <UserIcon />
+          Sign In
+        </RouterLink>
+      }
 
-      <ProfileMenu />
-
+      {/* Authenticated User */}
+      {
+        userData &&
+        <ProfileMenu />
+      }
 
     </div>
   );
