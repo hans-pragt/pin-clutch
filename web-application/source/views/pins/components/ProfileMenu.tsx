@@ -1,9 +1,10 @@
 // #region Imports
 
 /* Clutch */
-import { cn } from '@styles';
-import { Button } from 'components/input/Button';
+import { MenuContents } from 'components/menu/MenuContents';
 import { MenuItem } from 'components/menu/MenuItem';
+import { MenuTrigger } from 'components/menu/MenuTrigger';
+import { Menu } from 'components/menu/Menu';
 
 import UserIcon from '@icons/monotone/user.svg?react';
 
@@ -17,30 +18,28 @@ import UserIcon from '@icons/monotone/user.svg?react';
 
 export function ProfileMenu() {
   return (
-    <div className="relative">
+    <Menu>
 
       {/* Trigger */}
-      <Button
-        kind    = "accent"
-        label   = "hpragt@gmail.com"
-      />
+      <MenuTrigger kind='accent'>
+        user@gmail.com
+      </MenuTrigger>
 
       {/* Menu */}
-      <ul className={cn(
-        'absolute origin-top-right right-0', 
-        'w-56 mt-4 p-2', 
-        'bg-tan-300',
-        'rounded-xl border-4 border-shadow-500 shadow-medium',
-      )}>
-        <MenuItem 
-          icon={UserIcon}
-          label="Profile"
-        />
-        <MenuItem label="Notifications" />
-        <MenuItem label="Sign Out" />
-      </ul>
+      <MenuContents>
+        <MenuItem>
+          <UserIcon />
+          Profile
+        </MenuItem>
+        <MenuItem>
+          Notifications
+        </MenuItem>
+        <MenuItem>
+          Sign Out
+        </MenuItem>
+      </MenuContents>
 
-    </div>
+    </Menu>
   );
 }
 

@@ -9,9 +9,23 @@ import { MenuContext } from './Menu';
 
 // #endregion Imports
 
+// #region Properties
+
+interface MenuTriggerProperties extends ButtonHTMLAttributes<HTMLButtonElement> {
+  kind? : 'default' | 'accent';
+}
+
+// #endregion Properties
+
 // #region Component
 
-export function MenuTrigger({ onClick, children, ...buttonAttributes } : ButtonHTMLAttributes<HTMLButtonElement>) {
+export function MenuTrigger(properties : MenuTriggerProperties) {
+
+  const { 
+    onClick,
+    children, 
+    ...buttonAttributes 
+  } = properties;
 
   // #region Menu
 

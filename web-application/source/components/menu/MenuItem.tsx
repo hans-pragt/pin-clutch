@@ -5,23 +5,20 @@ import { HTMLAttributes } from 'react';
 
 /* Clutch */
 import { cn } from '@styles';
-import { IconType } from '@icons';
 
 // #endregion Imports
 
 // #region Properties
 
-interface MenuItemProperties extends HTMLAttributes<HTMLLIElement> {
+interface MenuItemProperties extends Omit<HTMLAttributes<HTMLLIElement>, 'onSelect'> {
 
   /**
-   * The label for this menu item.
+   * Called when the menu item is actived by mouse click or keyboard interaction.
+   * 
+   * @param event The event triggered by selection of this item.
    */
-  label : string;
+  onSelect? : (event : Event) => void;
 
-  /**
-   * An optional icon to display with the label.
-   */
-  icon? : IconType;
 }
 
 // #endregion Properties
@@ -31,10 +28,9 @@ interface MenuItemProperties extends HTMLAttributes<HTMLLIElement> {
 export function MenuItem(properties : MenuItemProperties) {
 
   const {
-    label,
-    icon : Icon,
-
     className,
+    children,
+    onSelect,
     ...liAttributes
   } = properties;
 
@@ -44,15 +40,22 @@ export function MenuItem(properties : MenuItemProperties) {
       role="menuitem"
       className={cn(
         'cursor-default',
-        'p-2',
-        'flex flex-row gap-2',
         'rounded-xl border-4 border-transparent hover:border-shadow-500',
-        'active:translate-1.5 active:shadow-low',
+        'active:translate-1.5',
+        'transition-transform duration-200',
         className
       )}
     >
-      {Icon && <Icon aria-hidden="true" />}
-      {label}
+      <button 
+        className={cn(
+          'p-2',
+          'flex flex-row gap-2'
+        )}
+
+        onClick={event => onSelect?.(event.nativeEvent)}
+      >
+        {children}
+      </button>
     </li>
   );
 }
