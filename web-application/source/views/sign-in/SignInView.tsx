@@ -16,7 +16,7 @@ import { PageHeader } from 'components/PageHeader';
 import { InlineHeader } from 'components/InlineHeader';
 import { ViewContainer } from 'components/ViewContainer';
 import { TextInput } from 'components/input/TextInput';
-import { Button } from 'components/input/Button';
+import { Button } from 'components/button/Button';
 
 // #endregion Imports
 

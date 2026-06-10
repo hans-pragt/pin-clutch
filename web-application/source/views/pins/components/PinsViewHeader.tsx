@@ -7,8 +7,8 @@ import useSWR from 'swr';
 import UserIcon from '@icons/monotone/user.svg?react';
 import { getMe } from 'api/users.api';
 import { PageHeader } from 'components/PageHeader';
-import { RouterLink } from 'components/input/RouterLink';
-import { Button } from 'components/input/Button';
+import { RouterLink } from 'components/button/RouterLink';
+import { Button } from 'components/button/Button';
 import { signOut } from 'api/authentication.api';
 import { ProfileMenu } from './ProfileMenu';
 

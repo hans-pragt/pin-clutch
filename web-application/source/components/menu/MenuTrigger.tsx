@@ -4,7 +4,7 @@
 import { ButtonHTMLAttributes, MouseEvent, useContext } from 'react';
 
 /* Clutch */
-import { Button } from 'components/input/Button';
+import { Button } from 'components/button/Button';
 import { MenuContext } from './Menu';
 
 // #endregion Imports
