@@ -4,8 +4,11 @@
 import { ButtonHTMLAttributes, MouseEvent, useContext } from 'react';
 
 /* Clutch */
-import { Button } from 'components/button/Button';
+import { Button } from '@components/button/Button';
 import { MenuContext } from './Menu';
+
+import ChevronDownIcon from '@icons/monotone/chevron-down.svg?react';
+import ChevronUpIcon from '@icons/monotone/chevron-up.svg?react';
 
 // #endregion Imports
 
@@ -29,7 +32,7 @@ export function MenuTrigger(properties : MenuTriggerProperties) {
 
   // #region Menu
 
-  const { toggle } = useContext(MenuContext);
+  const { toggle, isExpanded } = useContext(MenuContext);
 
   function onToggle(event : MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) {
     toggle();
@@ -44,6 +47,12 @@ export function MenuTrigger(properties : MenuTriggerProperties) {
       onClick={event => onToggle(event)}
     >
       {children}
+      {
+        isExpanded ?
+          <ChevronUpIcon className="size-4" /> :
+          <ChevronDownIcon className="size-4" />
+
+      }
     </Button>
   );
 }
