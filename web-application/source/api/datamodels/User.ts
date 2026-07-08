@@ -1,6 +1,3 @@
-/**
- * Defines all the properties that a user can have.
- */
 export interface User {
   id : string;
   email : string;

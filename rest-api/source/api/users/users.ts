@@ -37,7 +37,10 @@ router.get(
       const stytchResponse = await stytchClient.sessions.authenticate({ session_jwt: jwt });
       
       response.json({
-        id: stytchResponse.user.user_id
+        id: stytchResponse.user.user_id,
+        email: stytchResponse.user.emails.filter(email => email.verified)[0]?.email,
+        firstName: stytchResponse.user.name?.first_name,
+        lastName: stytchResponse.user.name?.last_name
       });
     }
 

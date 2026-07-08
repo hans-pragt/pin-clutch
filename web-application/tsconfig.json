@@ -24,6 +24,10 @@
     /* Paths */
     "paths": {
       "*": ["./source/*"],
+      "@api": ["./source/api/"],
+      "@api/*": ["./source/api/*"],
+      "@components": ["./source/components/"],
+      "@components/*": ["./source/components/*"],
       "@icons": ["./source/icons/"],
       "@icons/*": ["./source/icons/*"],
       "@routes": ["./source/routes/"],
