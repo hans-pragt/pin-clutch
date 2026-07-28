@@ -27,7 +27,7 @@ export function ViewContainer(properties : ViewContainerProperties) {
     <div
       {...htmlDivAttributes}
       className={cn(
-        'rounded-t-xl p-8',
+        'rounded-t-xl',
         'border-4 border-shadow-500 border-b-0',
         'shadow-medium',
         'bg-tan-500',

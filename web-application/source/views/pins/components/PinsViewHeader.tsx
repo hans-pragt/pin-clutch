@@ -1,5 +1,8 @@
 // #region Imports
 
+/* React */
+import { useNavigate } from 'react-router-dom';
+
 /* SWR */
 import useSWR from 'swr';
 
@@ -19,6 +22,8 @@ import { MenuItem } from '@components/menu/MenuItem';
 // #region Component
 
 export function PinsViewHeader() {
+
+  const navigate = useNavigate();
 
   // #region User's Account
 
@@ -69,8 +74,13 @@ export function PinsViewHeader() {
 
           <MenuContents>
 
+            {/* Pins */}
+            <MenuItem onSelect={() => navigate(`/pins/user/${userData.id}`)}>
+              My Pins
+            </MenuItem>
+
             {/* Profile */}
-            <MenuItem onSelect={() => console.log('profile')}>
+            <MenuItem onSelect={() => navigate('/profile')}>
               My Profile
             </MenuItem>
 

@@ -57,7 +57,7 @@ export function SignInView() {
       <PageHeader label="Sign In" />
 
       {/* Sign In Form */}
-      <ViewContainer className="flex-1">
+      <ViewContainer className="flex-1 p-8">
         {
           isMagicLinkSent ?
           (

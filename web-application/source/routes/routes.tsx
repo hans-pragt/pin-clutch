@@ -31,7 +31,7 @@ const router = createBrowserRouter([
 
         /* User's Pins */
         {
-          path: '/pins/user/:username',
+          path: '/pins/user/:id',
           element: <UsersPinsView />
         },
 
