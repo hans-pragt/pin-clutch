@@ -53,13 +53,13 @@ export function AuthenticationView() {
 
   return (
     <div className={cn(
-      'mx-auto h-full md:w-lg pt-4',
+      'container mx-auto h-full md:w-lg pt-4',
       'flex flex-col gap-2'
     )}>
       <PageHeader label="Authenticating" />
 
       <ViewContainer className="flex-1">
-        <div className='w-full h-full flex flex-col items-center gap-4 mt-12'>
+        <div className='w-full flex flex-col items-center gap-4 mt-12'>
           <IconPin Icon={KeyIcon} />
           <InlineHeader className="mt-6" label="Checking..." />
         </div>
