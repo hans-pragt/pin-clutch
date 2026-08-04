@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import useSWR from 'swr';
 
 /* Clutch */
-import UserIcon from '@icons/monotone/user.svg?react';
 import { getMe } from '@api/users.api';
 import { signOut } from '@api/authentication.api';
 import { PageHeader } from '@components/PageHeader';
@@ -16,6 +15,8 @@ import { Menu } from '@components/menu/Menu';
 import { MenuTrigger } from '@components/menu/MenuTrigger';
 import { MenuContents } from '@components/menu/MenuContents';
 import { MenuItem } from '@components/menu/MenuItem';
+
+import UserIcon from '@icons/monotone/user.svg?react';
 
 // #endregion Imports
 
