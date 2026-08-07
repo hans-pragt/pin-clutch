@@ -23,23 +23,29 @@ export const buttonVariants = cva(
   {
     variants: {
       size: {
-        small: 'text-xs',
-        medium: 'text-base',
-        large: 'text-xl'
+        small:      'text-xs',
+        medium:     'text-base',
+        large:      'text-xl',
+        icon:       'p-0 size-6',
+        'icon-sm':  [
+          'p-0 size-4',
+          'enabled:hover:-translate-px enabled:hover:shadow-high',
+          'enabled:active:translate-px enabled:active:shadow-low',
+        ]
       },
       kind: {
-        default: 'bg-tan-300',
-        accent: 'bg-minty-500',
-        ghost: [
+        default:  'bg-tan-300',
+        accent:   'bg-minty-500',
+        ghost:    [
           'bg-transparent',
           'border-0',
-          'shadow-none'
+          'shadow-none enabled:hover:shadow-none'
         ]
       }
     },
     defaultVariants: {
-      size: 'medium',
-      kind: 'default'
+      size:     'medium',
+      kind:     'default'
     }
   }
 );

@@ -23,7 +23,7 @@ interface ButtonProperties extends ButtonHTMLAttributes<HTMLButtonElement>, Vari
    * 
    * @default 'medium'
    */
-  size? : 'small' | 'medium' | 'large';
+  size? : 'small' | 'medium' | 'large' | 'icon' | 'icon-sm';
 
   /**
    * Controls the appearance of the button.
@@ -54,10 +54,10 @@ export function Button(properties : PropsWithChildren<ButtonProperties>) {
     <button
       {...htmlButtonAttributes}
       className   = {cn(
-        buttonVariants(),
-        {
-          '[&_svg]:shrink-0 [&_svg]:size-4': size === 'small'
-        },
+        buttonVariants({size, kind}),
+        // {
+        //   '[&_svg]:shrink-0 [&_svg]:size-4': size === 'small'
+        // },
         className
       )}
     >
