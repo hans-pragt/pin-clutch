@@ -47,9 +47,8 @@ export function RouterLink(properties : ButtonProperties) {
         },
         'rounded-xl border-4 border-shadow-500',
         'shadow-medium',
-        'enabled:hover:-translate-0.5 enabled:hover:shadow-high',
-        'enabled:active:translate-1.5 enabled:active:shadow-low',
-        'disabled:text-tan-500 disabled:border-transparent disabled:shadow-low',
+        'hover:-translate-0.5 hover:shadow-high',
+        'active:translate-1.5 active:shadow-low',
         'transition duration-200',
         className
       )}

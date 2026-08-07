@@ -3,21 +3,36 @@
 /* React */
 import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
+/* CVA */
+import { VariantProps } from 'class-variance-authority';
+
 /* Clutch */
+import { buttonVariants } from './variants';
 import { cn } from '@styles';
 
 // #endregion Imports
 
 // #region Properties
 
-interface ButtonProperties extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProperties extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+
+  // #region Appearance
+
+  /**
+   * Controls the visual size of the button.
+   * 
+   * @default 'medium'
+   */
+  size? : 'small' | 'medium' | 'large';
 
   /**
    * Controls the appearance of the button.
    * 
    * @default 'default'
    */
-  kind? : 'default' | 'accent';
+  kind? : 'default' | 'accent' | 'ghost';
+
+  // #endregion Appearance
 
 }
 
@@ -27,6 +42,7 @@ interface ButtonProperties extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function Button(properties : PropsWithChildren<ButtonProperties>) {
   const {
+    size            = 'medium',
     kind            = 'default',
     children,
 
@@ -38,25 +54,16 @@ export function Button(properties : PropsWithChildren<ButtonProperties>) {
     <button
       {...htmlButtonAttributes}
       className   = {cn(
-        'px-4 py-2',
-        'flex flex-row gap-2 items-center justify-center',
-        'font-liter text-tan-800 font-bold tracking-wider',
+        buttonVariants(),
         {
-          'bg-tan-300': kind === 'default',
-          'bg-minty-500': kind === 'accent'
+          '[&_svg]:shrink-0 [&_svg]:size-4': size === 'small'
         },
-        'rounded-xl border-4 border-shadow-500',
-        'shadow-medium',
-        'enabled:hover:-translate-0.5 enabled:hover:shadow-high',
-        'enabled:active:translate-1.5 enabled:active:shadow-low',
-        'disabled:text-tan-500 disabled:border-transparent disabled:shadow-low',
-        'transition duration-200',
         className
       )}
     >
       {children}
     </button>
-  )
+  );
 }
 
 // #endregion Component
